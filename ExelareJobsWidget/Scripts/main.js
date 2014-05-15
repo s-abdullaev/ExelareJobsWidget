@@ -39,7 +39,7 @@ require.config({
     }
 });
 
-//
+//hello world
 
 define(["jquery", "knockout", "bootstrap", "jquery-bbq", "settingsMgr"],
     function ($, ko, _1,_2, setMgr) {
