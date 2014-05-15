@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0af5fd4-f2aa-4b39-a28d-6f57df3779de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="svcLinkedItemsMgr.xsd" MetadataType="Schema" ID="9507b8ef-f05a-4651-bacb-3004f766a564" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd0" />
+    <MetadataFile FileName="svcLinkedItemsMgr.wsdl" MetadataType="Wsdl" ID="577f0de7-5d36-4cab-a438-890a77526579" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?wsdl" />
+    <MetadataFile FileName="svcLinkedItemsMgr1.xsd" MetadataType="Schema" ID="11186b18-6043-422c-b498-cb2c497fd924" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd3" />
+    <MetadataFile FileName="svcLinkedItemsMgr2.xsd" MetadataType="Schema" ID="f7e9c8f8-cfae-454c-af32-90ff50448431" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd1" />
+    <MetadataFile FileName="svcLinkedItemsMgr3.xsd" MetadataType="Schema" ID="3eb39216-74f1-4cf6-9400-d20b46f9beb2" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd2" />
+    <MetadataFile FileName="svcLinkedItemsMgr.disco" MetadataType="Disco" ID="28729f29-3729-43a5-8a6b-d833a0cf0141" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

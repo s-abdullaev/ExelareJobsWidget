@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://apps.exelare.com/CBSWS/svcDataMgr.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" />
+  <xs:element name="GetReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCReportReq" nillable="true" type="q1:ArrayOfdcReportReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetReportResult" nillable="true" type="q2:ArrayOfdcReportResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCReportReq" nillable="true" type="q3:dcReportReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetSubReportResult" nillable="true" type="q4:dcReportResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubReportAsCSV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCReportReq" nillable="true" type="q5:dcReportReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubReportAsCSVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSubReportAsCSVResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageAsCSV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCDataReq" nillable="true" type="q6:dcDataReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageAsCSVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPageAsCSVResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCDataReq" nillable="true" type="q7:dcDataReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetPageResult" nillable="true" type="q8:dcDataResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

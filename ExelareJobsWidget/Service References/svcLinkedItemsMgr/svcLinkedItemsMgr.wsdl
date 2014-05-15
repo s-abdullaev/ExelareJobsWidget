@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="svcLinkedItemsMgr" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q1:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q2:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q3:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItemBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemBatch" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItemBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddItemBatch_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q4:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q5:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q6:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemInfo_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q7:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetSubEntityID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubEntityID" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetSubEntityID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubEntityIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetSubEntityID_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q8:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SnoozeCalendarItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:SnoozeCalendarItems" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SnoozeCalendarItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SnoozeCalendarItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SnoozeCalendarItems_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q9:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_CompleteCalendarItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteCalendarItems" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_CompleteCalendarItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteCalendarItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_CompleteCalendarItems_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q10:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendarItemsLinkInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalendarItemsLinkInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q11:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDoc" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDoc_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q12:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDocUsingOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDocUsingOTP" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDocUsingOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDocUsingOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetItemDocUsingOTP_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q13:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SetItemDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetItemDoc" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SetItemDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetItemDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SetItemDoc_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q14:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMailItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMailItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMailItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMailItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMailItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q15:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMailItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMailItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMailItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q16:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmittedConsultantsByEMail" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmittedConsultantsByEMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q17:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SendEMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEMail" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SendEMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SendEMail_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q18:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_SendEMail_dcSendEMailExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q19:dcSendEMailException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_ReSendEMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReSendEMail" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_ReSendEMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReSendEMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_ReSendEMail_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q20:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_ReSendEMail_dcSendEMailExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q21:dcSendEMailException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetOutboxItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutboxItems" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetOutboxItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutboxItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetOutboxItems_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q22:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_EMailError_InputMessage">
+    <wsdl:part name="parameters" element="tns:EMailError" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_EMailError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EMailErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_EMailError_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q23:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewMLinkItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewMLinkItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewMLinkItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewMLinkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_NewMLinkItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q24:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMLinkItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMLinkItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMLinkItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMLinkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_GetMLinkItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q25:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateMLinkItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMLinkItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateMLinkItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMLinkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_UpdateMLinkItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q26:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteMLinkItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMLinkItem" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteMLinkItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMLinkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_DeleteMLinkItem_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q27:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMLinkItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMLinkItems" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMLinkItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMLinkItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_AddMLinkItems_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q28:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkSubmitted_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkSubmitted" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkSubmitted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkSubmittedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkSubmitted_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q29:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkPotential_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkPotential" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkPotential_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkPotentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkPotential_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q30:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkReceived_InputMessage">
+    <wsdl:part name="parameters" element="tns:LinkReceived" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkReceived_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LinkReceivedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcLinkedItemsMgr_LinkReceived_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q31:dcException" />
+  </wsdl:message>
+  <wsdl:portType name="ISvcLinkedItemsMgr">
+    <wsdl:operation name="NewItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewItem" message="tns:ISvcLinkedItemsMgr_NewItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewItemResponse" message="tns:ISvcLinkedItemsMgr_NewItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_NewItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItem" message="tns:ISvcLinkedItemsMgr_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemResponse" message="tns:ISvcLinkedItemsMgr_GetItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItem" message="tns:ISvcLinkedItemsMgr_AddItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItemResponse" message="tns:ISvcLinkedItemsMgr_AddItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_AddItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItemBatch" message="tns:ISvcLinkedItemsMgr_AddItemBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItemBatchResponse" message="tns:ISvcLinkedItemsMgr_AddItemBatch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddItemBatchdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_AddItemBatch_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateItem" message="tns:ISvcLinkedItemsMgr_UpdateItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateItemResponse" message="tns:ISvcLinkedItemsMgr_UpdateItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_UpdateItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteItem" message="tns:ISvcLinkedItemsMgr_DeleteItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteItemResponse" message="tns:ISvcLinkedItemsMgr_DeleteItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_DeleteItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemInfo" message="tns:ISvcLinkedItemsMgr_GetItemInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemInfoResponse" message="tns:ISvcLinkedItemsMgr_GetItemInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemInfodcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetItemInfo_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubEntityID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetSubEntityID" message="tns:ISvcLinkedItemsMgr_GetSubEntityID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetSubEntityIDResponse" message="tns:ISvcLinkedItemsMgr_GetSubEntityID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetSubEntityIDdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetSubEntityID_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SnoozeCalendarItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SnoozeCalendarItems" message="tns:ISvcLinkedItemsMgr_SnoozeCalendarItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SnoozeCalendarItemsResponse" message="tns:ISvcLinkedItemsMgr_SnoozeCalendarItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SnoozeCalendarItemsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_SnoozeCalendarItems_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteCalendarItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/CompleteCalendarItems" message="tns:ISvcLinkedItemsMgr_CompleteCalendarItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/CompleteCalendarItemsResponse" message="tns:ISvcLinkedItemsMgr_CompleteCalendarItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/CompleteCalendarItemsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_CompleteCalendarItems_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendarItemsLinkInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetCalendarItemsLinkInfo" message="tns:ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetCalendarItemsLinkInfoResponse" message="tns:ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetCalendarItemsLinkInfodcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetCalendarItemsLinkInfo_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDoc" message="tns:ISvcLinkedItemsMgr_GetItemDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocResponse" message="tns:ISvcLinkedItemsMgr_GetItemDoc_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetItemDoc_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDocUsingOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocUsingOTP" message="tns:ISvcLinkedItemsMgr_GetItemDocUsingOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocUsingOTPResponse" message="tns:ISvcLinkedItemsMgr_GetItemDocUsingOTP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocUsingOTPdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetItemDocUsingOTP_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetItemDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SetItemDoc" message="tns:ISvcLinkedItemsMgr_SetItemDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SetItemDocResponse" message="tns:ISvcLinkedItemsMgr_SetItemDoc_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SetItemDocdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_SetItemDoc_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMailItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMailItem" message="tns:ISvcLinkedItemsMgr_AddMailItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMailItemResponse" message="tns:ISvcLinkedItemsMgr_AddMailItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMailItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_AddMailItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMailItem" message="tns:ISvcLinkedItemsMgr_GetMailItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMailItemResponse" message="tns:ISvcLinkedItemsMgr_GetMailItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMailItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetMailItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmittedConsultantsByEMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SubmittedConsultantsByEMail" message="tns:ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SubmittedConsultantsByEMailResponse" message="tns:ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SubmittedConsultantsByEMaildcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_SubmittedConsultantsByEMail_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SendEMail" message="tns:ISvcLinkedItemsMgr_SendEMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SendEMailResponse" message="tns:ISvcLinkedItemsMgr_SendEMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SendEMaildcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_SendEMail_dcExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/SendEMaildcSendEMailExceptionFault" name="dcSendEMailExceptionFault" message="tns:ISvcLinkedItemsMgr_SendEMail_dcSendEMailExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReSendEMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/ReSendEMail" message="tns:ISvcLinkedItemsMgr_ReSendEMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/ReSendEMailResponse" message="tns:ISvcLinkedItemsMgr_ReSendEMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/ReSendEMaildcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_ReSendEMail_dcExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/ReSendEMaildcSendEMailExceptionFault" name="dcSendEMailExceptionFault" message="tns:ISvcLinkedItemsMgr_ReSendEMail_dcSendEMailExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutboxItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetOutboxItems" message="tns:ISvcLinkedItemsMgr_GetOutboxItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetOutboxItemsResponse" message="tns:ISvcLinkedItemsMgr_GetOutboxItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetOutboxItemsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetOutboxItems_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EMailError">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/EMailError" message="tns:ISvcLinkedItemsMgr_EMailError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/EMailErrorResponse" message="tns:ISvcLinkedItemsMgr_EMailError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/EMailErrordcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_EMailError_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMLinkItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewMLinkItem" message="tns:ISvcLinkedItemsMgr_NewMLinkItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewMLinkItemResponse" message="tns:ISvcLinkedItemsMgr_NewMLinkItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/NewMLinkItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_NewMLinkItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMLinkItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMLinkItem" message="tns:ISvcLinkedItemsMgr_GetMLinkItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMLinkItemResponse" message="tns:ISvcLinkedItemsMgr_GetMLinkItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/GetMLinkItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_GetMLinkItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLinkItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateMLinkItem" message="tns:ISvcLinkedItemsMgr_UpdateMLinkItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateMLinkItemResponse" message="tns:ISvcLinkedItemsMgr_UpdateMLinkItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/UpdateMLinkItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_UpdateMLinkItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMLinkItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteMLinkItem" message="tns:ISvcLinkedItemsMgr_DeleteMLinkItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteMLinkItemResponse" message="tns:ISvcLinkedItemsMgr_DeleteMLinkItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/DeleteMLinkItemdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_DeleteMLinkItem_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMLinkItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMLinkItems" message="tns:ISvcLinkedItemsMgr_AddMLinkItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMLinkItemsResponse" message="tns:ISvcLinkedItemsMgr_AddMLinkItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/AddMLinkItemsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_AddMLinkItems_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkSubmitted">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkSubmitted" message="tns:ISvcLinkedItemsMgr_LinkSubmitted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkSubmittedResponse" message="tns:ISvcLinkedItemsMgr_LinkSubmitted_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkSubmitteddcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_LinkSubmitted_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkPotential">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkPotential" message="tns:ISvcLinkedItemsMgr_LinkPotential_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkPotentialResponse" message="tns:ISvcLinkedItemsMgr_LinkPotential_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkPotentialdcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_LinkPotential_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkReceived">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkReceived" message="tns:ISvcLinkedItemsMgr_LinkReceived_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkReceivedResponse" message="tns:ISvcLinkedItemsMgr_LinkReceived_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcLinkedItemsMgr/LinkReceiveddcExceptionFault" name="dcExceptionFault" message="tns:ISvcLinkedItemsMgr_LinkReceived_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISvcLinkedItemsMgr" type="tns:ISvcLinkedItemsMgr">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/NewItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/AddItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemBatch">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/AddItemBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/UpdateItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/DeleteItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemInfo">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetItemInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubEntityID">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetSubEntityID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SnoozeCalendarItems">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/SnoozeCalendarItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteCalendarItems">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/CompleteCalendarItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalendarItemsLinkInfo">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetCalendarItemsLinkInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDoc">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDocUsingOTP">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetItemDocUsingOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetItemDoc">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/SetItemDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddMailItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/AddMailItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetMailItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmittedConsultantsByEMail">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/SubmittedConsultantsByEMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendEMail">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/SendEMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="dcSendEMailExceptionFault">
+        <soap:fault use="literal" name="dcSendEMailExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReSendEMail">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/ReSendEMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="dcSendEMailExceptionFault">
+        <soap:fault use="literal" name="dcSendEMailExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutboxItems">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetOutboxItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EMailError">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/EMailError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NewMLinkItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/NewMLinkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMLinkItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/GetMLinkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMLinkItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/UpdateMLinkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMLinkItem">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/DeleteMLinkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddMLinkItems">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/AddMLinkItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkSubmitted">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/LinkSubmitted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkPotential">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/LinkPotential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LinkReceived">
+      <soap:operation soapAction="http://tempuri.org/ISvcLinkedItemsMgr/LinkReceived" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="svcLinkedItemsMgr">
+    <wsdl:port name="BasicHttpBinding_ISvcLinkedItemsMgr" binding="tns:BasicHttpBinding_ISvcLinkedItemsMgr">
+      <soap:address location="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

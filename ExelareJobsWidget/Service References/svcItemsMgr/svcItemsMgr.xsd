@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CBS.ClassLib.Enums.Item.Add" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib.Enums.Item.Add" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DupRule">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EMails" />
+      <xs:enumeration value="PK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DupRule" nillable="true" type="tns:DupRule" />
+  <xs:simpleType name="IfDup">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Ignore" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IfDup" nillable="true" type="tns:IfDup" />
+  <xs:simpleType name="Result">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Added" />
+      <xs:enumeration value="Updated" />
+      <xs:enumeration value="Ignored" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Result" nillable="true" type="tns:Result" />
+</xs:schema>

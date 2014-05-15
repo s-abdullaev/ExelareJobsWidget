@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://apps.exelare.com/CBSWS/svcLinkedItemsMgr.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" />
+  <xs:element name="NewItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SubEntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ParentPKFieldValue" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewFKs" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="XTabFKs" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewItemResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetItemResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Item" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItemBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Item" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OtherParentPKFieldValues" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddItemBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddItemBatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Item" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetItemInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubEntityID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubEntityIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSubEntityIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SnoozeCalendarItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PKFieldValues" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element minOccurs="0" name="RemDateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SnoozeCalendarItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SnoozeCalendarItemsResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteCalendarItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PKFieldValues" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteCalendarItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompleteCalendarItemsResult" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalendarItemsLinkInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PKFieldValues" nillable="true" type="q8:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalendarItemsLinkInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCalendarItemsLinkInfoResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zipped" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetItemDocResult" nillable="true" type="q9:dcFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemDocUsingOTP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OTP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zipped" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetItemDocUsingOTPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetItemDocUsingOTPResult" nillable="true" type="q10:dcFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetItemDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objDCFile" nillable="true" type="q11:dcFile" />
+        <xs:element minOccurs="0" name="Zipped" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetItemDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetItemDocResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMailItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParentPKFieldValues" nillable="true" type="q12:ArrayOfstring" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objMailItem" nillable="true" type="q13:dcMailItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMailItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AddMailItemResult" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMailItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NeedAttachmentsFileContent" type="xs:boolean" />
+        <xs:element minOccurs="0" name="NeedMessageFileContent" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMailItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="GetMailItemResult" nillable="true" type="q15:dcMailItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmittedConsultantsByEMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConsPKValues" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EMailPKValues" nillable="true" type="q17:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmittedConsultantsByEMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmittedConsultantsByEMailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objMailServer" nillable="true" type="q18:dcSMTPServer" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ParentPKValues" nillable="true" type="q19:ArrayOfstring" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objMailItem" nillable="true" type="q20:dcMailItem" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConsPKValues" nillable="true" type="q21:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="SendEMailResult" nillable="true" type="q22:dcOBResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReSendEMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="objSMTPServer" nillable="true" type="q23:dcSMTPServer" />
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReSendEMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="ReSendEMailResult" nillable="true" type="q24:dcOBResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboxItems">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboxItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboxItemsResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MsgBody" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CBS.ClassLib" minOccurs="0" name="Attachments" nillable="true" type="q25:ArrayOfdcFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EMailErrorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewMLinkItem">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewMLinkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewMLinkItemResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMLinkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMLinkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMLinkItemResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMLinkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Item" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMLinkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMLinkItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMLinkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMLinkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMLinkItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMLinkItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FromPKValues" nillable="true" type="q26:ArrayOfstring" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToPKValues" nillable="true" type="q27:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Item" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMLinkItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddMLinkItemsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FromPKValues" nillable="true" type="q28:ArrayOfstring" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToPKValues" nillable="true" type="q29:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkPotential">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FromPKValues" nillable="true" type="q30:ArrayOfstring" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToPKValues" nillable="true" type="q31:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkPotentialResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkReceived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FromPKValues" nillable="true" type="q32:ArrayOfstring" />
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToPKValues" nillable="true" type="q33:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkReceivedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

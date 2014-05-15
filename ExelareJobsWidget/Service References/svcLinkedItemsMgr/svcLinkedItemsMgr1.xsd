@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CBS.ClassLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="dcException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorNum" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcException" nillable="true" type="tns:dcException" />
+  <xs:complexType name="dcFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileContents" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcFile" nillable="true" type="tns:dcFile" />
+  <xs:complexType name="dcMailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:ArrayOfdcFile" />
+      <xs:element minOccurs="0" name="BCCs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CCs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileExt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPrivate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MailClient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MailContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="MailDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MailType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentPKFieldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SentFromEMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentFromName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentToEMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentToName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Urgent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserIDs" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcMailItem" nillable="true" type="tns:dcMailItem" />
+  <xs:complexType name="ArrayOfdcFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dcFile" nillable="true" type="tns:dcFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdcFile" nillable="true" type="tns:ArrayOfdcFile" />
+  <xs:complexType name="dcSMTPServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableSSL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="ReplyTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcSMTPServer" nillable="true" type="tns:dcSMTPServer" />
+  <xs:complexType name="dcOBResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exception" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastTryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ntries" type="xs:int" />
+      <xs:element minOccurs="0" name="OBIntID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcOBResp" nillable="true" type="tns:dcOBResp" />
+  <xs:complexType name="dcSendEMailException">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:dcException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OBResp" nillable="true" type="tns:dcOBResp" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="dcSendEMailException" nillable="true" type="tns:dcSendEMailException" />
+</xs:schema>

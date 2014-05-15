@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fee354db-ee97-460f-b1f3-2838e0d397e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.exelare.com/CBSWS/svcDataMgr.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="svcDataMgr.wsdl" MetadataType="Wsdl" ID="441ee88a-e86c-46fd-b830-9681a787ad75" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcDataMgr.svc?wsdl" />
+    <MetadataFile FileName="svcDataMgr.xsd" MetadataType="Schema" ID="bb09bf5c-2e58-4b25-853a-9abcbba33ebd" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcDataMgr.svc?xsd=xsd0" />
+    <MetadataFile FileName="svcDataMgr1.xsd" MetadataType="Schema" ID="5f1ebb19-823f-43e2-8ca3-e58f78125ef6" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcDataMgr.svc?xsd=xsd2" />
+    <MetadataFile FileName="svcDataMgr.disco" MetadataType="Disco" ID="920a5868-8b38-415e-a35f-e8f35b8250ca" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcDataMgr.svc?disco" />
+    <MetadataFile FileName="svcDataMgr2.xsd" MetadataType="Schema" ID="b1bf277f-679a-4b6c-91d6-8283c1885837" SourceId="1" SourceUrl="http://apps.exelare.com/CBSWS/svcDataMgr.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

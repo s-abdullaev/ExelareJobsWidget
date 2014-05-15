@@ -1,0 +1,38 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-bind="text: JobTitle"></h4>
+            </div>
+            <div class="modal-body modal-body-scorllable">
+                <dl class="dl-horizontal">
+                    <dt>Job Title:</dt>
+                    <dd data-bind="text: JobTitle"></dd>
+
+                    <dt>Rate:</dt>
+                    <dd data-bind="text: Rate"></dd>
+
+                    <dt>Job Type:</dt>
+                    <dd data-bind="text: JobType"></dd>
+
+                    <dt>Location:</dt>
+                    <dd data-bind="text: Location"></dd>
+
+                    <dt>Primary Skills:</dt>
+                    <dd data-bind="text: PrimarySkills"></dd>
+
+                    <dt>Description:</dt>
+                    <dd data-bind="html: htmlDescription"></dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bind="click: applyJob">Apply</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- /Modal -->
+

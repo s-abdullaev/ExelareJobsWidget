@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{F7E9677A-F657-41FE-A116-3556F611C403}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExelareJobsWidget</RootNamespace>
+    <AssemblyName>ExelareJobsWidget</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ExelareJobsWidget.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ExelareJobsWidget.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.1.2\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.1.2\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="CustomSettings\cbiz_test2\Templates\ApplicationForm.html" />
+    <Content Include="CustomSettings\cbiz_test2\Templates\JobDetail.html" />
+    <Content Include="CustomSettings\cbiz_test2\Templates\JobListing.html" />
+    <Content Include="CustomSettings\cbiz_test2\Templates\LoadingModal.html" />
+    <Content Include="CustomSettings\cbiz_test2\Templates\ModalSample.html" />
+    <Content Include="CustomSettings\cbiz_test2\settings.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="My Project\PublishProfiles\Local.pubxml" />
+    <None Include="Scripts\lib\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\lib\jquery.ba-bbq.min.js" />
+    <Content Include="Scripts\lib\knockout-3.1.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-3.1.0.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
+    <Content Include="Scripts\lib\jquery-2.1.0.js" />
+    <Content Include="Scripts\lib\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\models\AppFormModel.js" />
+    <Content Include="Scripts\models\JobDetailModel.js" />
+    <Content Include="Scripts\models\JobListModel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\lib\r.js" />
+    <Content Include="Scripts\lib\require.js" />
+    <Content Include="Scripts\lib\jquery.browser.fix.js" />
+    <None Include="Scripts\lib\_references.js" />
+    <Content Include="Scripts\lib\underscore-min.js" />
+    <Content Include="Scripts\utils\AjaxDataSource.js" />
+    <Content Include="Scripts\utils\SettingsMgr.js" />
+    <Content Include="Scripts\widgets\ShareThisLoader.js" />
+    <Content Include="Scripts\utils\StaticDataSource.js" />
+    <Content Include="Scripts\utils\helpers.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Service References\svcDataMgr\ExelareJobsWidget.svcDataMgr.dcDataResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcDataMgr\ExelareJobsWidget.svcDataMgr.dcReportResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\svcDataMgr\svcDataMgr.disco" />
+    <None Include="Service References\svcDataMgr\configuration91.svcinfo" />
+    <None Include="Service References\svcDataMgr\configuration.svcinfo" />
+    <None Include="Service References\svcDataMgr\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Service References\svcItemsMgr\ExelareJobsWidget.svcItemsMgr.AddUpdateItemCBSXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcItemsMgr\ExelareJobsWidget.svcItemsMgr.dcFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcItemsMgr\ExelareJobsWidget.svcItemsMgr.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr.disco" />
+    <None Include="Service References\svcItemsMgr\configuration91.svcinfo" />
+    <None Include="Service References\svcItemsMgr\configuration.svcinfo" />
+    <None Include="Service References\svcItemsMgr\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Service References\svcLinkedItemsMgr\ExelareJobsWidget.svcLinkedItemsMgr.dcFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcLinkedItemsMgr\ExelareJobsWidget.svcLinkedItemsMgr.dcMailItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcLinkedItemsMgr\ExelareJobsWidget.svcLinkedItemsMgr.dcOBResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr.disco" />
+    <None Include="Service References\svcLinkedItemsMgr\configuration91.svcinfo" />
+    <None Include="Service References\svcLinkedItemsMgr\configuration.svcinfo" />
+    <None Include="Service References\svcLinkedItemsMgr\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Service References\svcUserMgr\ExelareJobsWidget.svcUserMgr.dcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\svcUserMgr\ExelareJobsWidget.svcUserMgr.dcUserResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\svcDataMgr\svcDataMgr.wsdl" />
+    <None Include="Service References\svcDataMgr\svcDataMgr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcDataMgr\svcDataMgr1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcDataMgr\svcDataMgr2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr.wsdl" />
+    <None Include="Service References\svcItemsMgr\svcItemsMgr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcItemsMgr\svcItemsMgr4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr.wsdl" />
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLinkedItemsMgr\svcLinkedItemsMgr3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcUserMgr\svcUserMgr.disco" />
+    <None Include="Service References\svcUserMgr\configuration91.svcinfo" />
+    <None Include="Service References\svcUserMgr\configuration.svcinfo" />
+    <None Include="Service References\svcUserMgr\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="settings.js" />
+    <Content Include="Templates\ApplicationForm.html" />
+    <Content Include="Templates\JobDetail.html" />
+    <Content Include="Templates\JobListing.html" />
+    <Content Include="Templates\JobListingDataGrid.html" />
+    <Content Include="Templates\LoadingModal.html" />
+    <Content Include="Templates\ModalSample.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="CBSServiceLibs\ServiceFactory.vb" />
+    <Compile Include="CBSServiceLibs\TypeExtensions.vb" />
+    <Compile Include="CBSServiceLibs\WCFAuthExtensionWPF.vb" />
+    <Compile Include="Controllers\FormController.vb" />
+    <Compile Include="Controllers\ItemsController.vb" />
+    <Compile Include="Controllers\JobsController.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBSUser.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\svcDataMgr\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcItemsMgr\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcLinkedItemsMgr\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcUserMgr\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\lib\jquery-2.1.0.min.map" />
+    <None Include="Service References\svcUserMgr\svcUserMgr.wsdl" />
+    <None Include="Service References\svcUserMgr\svcUserMgr.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcUserMgr\svcUserMgr1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcUserMgr\svcUserMgr2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcUserMgr\svcUserMgr3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svcDataMgr\" />
+    <WCFMetadataStorage Include="Service References\svcItemsMgr\" />
+    <WCFMetadataStorage Include="Service References\svcLinkedItemsMgr\" />
+    <WCFMetadataStorage Include="Service References\svcUserMgr\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31973</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:31973/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

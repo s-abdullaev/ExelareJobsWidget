@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="svcUserMgr" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcUserMgr.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcUserMgr.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcUserMgr.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.exelare.com/CBSWS/svcUserMgr.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISvcUserMgr_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_Login_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q1:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_ReplaceAppXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReplaceAppXML" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_ReplaceAppXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReplaceAppXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_ReplaceAppXML_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q2:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AuthUserPlus_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthUserPlus" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AuthUserPlus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthUserPlusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AuthUserPlus_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q3:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_CheckLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicense" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_CheckLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_CheckLicense_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q4:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptions" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOptions_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q5:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_SaveOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOptions" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_SaveOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_SaveOptions_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q6:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTP" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetOTP_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q7:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_Logout_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q8:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUsers_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q9:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_NewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewUser" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_NewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_NewUser_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q10:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_GetUser_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q11:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_AddUser_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q12:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_UpdateUser_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q13:dcException" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISvcUserMgr_DeleteUser_dcExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/CBS.ClassLib" name="detail" element="q14:dcException" />
+  </wsdl:message>
+  <wsdl:portType name="ISvcUserMgr">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/Login" message="tns:ISvcUserMgr_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/LoginResponse" message="tns:ISvcUserMgr_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/LogindcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_Login_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceAppXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/ReplaceAppXML" message="tns:ISvcUserMgr_ReplaceAppXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/ReplaceAppXMLResponse" message="tns:ISvcUserMgr_ReplaceAppXML_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/ReplaceAppXMLdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_ReplaceAppXML_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthUserPlus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/AuthUserPlus" message="tns:ISvcUserMgr_AuthUserPlus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/AuthUserPlusResponse" message="tns:ISvcUserMgr_AuthUserPlus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/AuthUserPlusdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_AuthUserPlus_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/CheckLicense" message="tns:ISvcUserMgr_CheckLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/CheckLicenseResponse" message="tns:ISvcUserMgr_CheckLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/CheckLicensedcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_CheckLicense_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOptions" message="tns:ISvcUserMgr_GetOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOptionsResponse" message="tns:ISvcUserMgr_GetOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOptionsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_GetOptions_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/SaveOptions" message="tns:ISvcUserMgr_SaveOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/SaveOptionsResponse" message="tns:ISvcUserMgr_SaveOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/SaveOptionsdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_SaveOptions_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOTP" message="tns:ISvcUserMgr_GetOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOTPResponse" message="tns:ISvcUserMgr_GetOTP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/GetOTPdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_GetOTP_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/Logout" message="tns:ISvcUserMgr_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/LogoutResponse" message="tns:ISvcUserMgr_Logout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/LogoutdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_Logout_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUsers" message="tns:ISvcUserMgr_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUsersResponse" message="tns:ISvcUserMgr_GetUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUsersdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_GetUsers_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/NewUser" message="tns:ISvcUserMgr_NewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/NewUserResponse" message="tns:ISvcUserMgr_NewUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/NewUserdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_NewUser_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUser" message="tns:ISvcUserMgr_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUserResponse" message="tns:ISvcUserMgr_GetUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/GetUserdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_GetUser_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/AddUser" message="tns:ISvcUserMgr_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/AddUserResponse" message="tns:ISvcUserMgr_AddUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/AddUserdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_AddUser_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/UpdateUser" message="tns:ISvcUserMgr_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/UpdateUserResponse" message="tns:ISvcUserMgr_UpdateUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/UpdateUserdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_UpdateUser_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcUserMgr/DeleteUser" message="tns:ISvcUserMgr_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcUserMgr/DeleteUserResponse" message="tns:ISvcUserMgr_DeleteUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISvcUserMgr/DeleteUserdcExceptionFault" name="dcExceptionFault" message="tns:ISvcUserMgr_DeleteUser_dcExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISvcUserMgr" type="tns:ISvcUserMgr">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceAppXML">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/ReplaceAppXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthUserPlus">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/AuthUserPlus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicense">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/CheckLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptions">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/GetOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOptions">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/SaveOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOTP">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/GetOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NewUser">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/NewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/ISvcUserMgr/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="dcExceptionFault">
+        <soap:fault use="literal" name="dcExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="svcUserMgr">
+    <wsdl:port name="BasicHttpBinding_ISvcUserMgr" binding="tns:BasicHttpBinding_ISvcUserMgr">
+      <soap:address location="http://apps.exelare.com/CBSWS/svcUserMgr.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

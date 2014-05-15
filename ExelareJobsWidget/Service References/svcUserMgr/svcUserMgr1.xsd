@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CBS.ClassLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CBS.ClassLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="dcUserReq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplyDaylightSavingsTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ChannelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZoneID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZoneStandardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcUserReq" nillable="true" type="tns:dcUserReq" />
+  <xs:complexType name="dcUserResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcUserResp" nillable="true" type="tns:dcUserResp" />
+  <xs:complexType name="dcException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorNum" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcException" nillable="true" type="tns:dcException" />
+  <xs:complexType name="ArrayOfdcFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dcFile" nillable="true" type="tns:dcFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdcFile" nillable="true" type="tns:ArrayOfdcFile" />
+  <xs:complexType name="dcFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileContents" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKFieldValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcFile" nillable="true" type="tns:dcFile" />
+  <xs:complexType name="dcUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppXMLVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplyDaylightSavingsTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DebugKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relogin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServerTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeZoneID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZoneStandardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UTCOffsetHours" type="xs:float" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XBarVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rAppXML" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="rAuthToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rLicenseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rNewDB" type="xs:boolean" />
+      <xs:element minOccurs="0" name="rNewMeta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="rSessionTimeoutMins" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="dcUser" nillable="true" type="tns:dcUser" />
+</xs:schema>
